@@ -37,6 +37,10 @@
 		6F64CF582A742E25003CFBB7 /* FacultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF572A742E25003CFBB7 /* FacultyCell.swift */; };
 		6F64CF5A2A743E46003CFBB7 /* AboutFacultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF592A743E46003CFBB7 /* AboutFacultyViewController.swift */; };
 		6F64CF5C2A743FA5003CFBB7 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF5B2A743FA5003CFBB7 /* MainModel.swift */; };
+		6F64CF5F2A7444DF003CFBB7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F64CF5E2A7444DF003CFBB7 /* Profile.storyboard */; };
+		6F64CF622A744758003CFBB7 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF612A744758003CFBB7 /* UIView + Extensions.swift */; };
+		6F64CF642A7452BB003CFBB7 /* SelectTargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF632A7452BB003CFBB7 /* SelectTargetController.swift */; };
+		6F64CF662A745315003CFBB7 /* TargetProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF652A745315003CFBB7 /* TargetProfileTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		6F64CF572A742E25003CFBB7 /* FacultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyCell.swift; sourceTree = "<group>"; };
 		6F64CF592A743E46003CFBB7 /* AboutFacultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutFacultyViewController.swift; sourceTree = "<group>"; };
 		6F64CF5B2A743FA5003CFBB7 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		6F64CF5E2A7444DF003CFBB7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		6F64CF612A744758003CFBB7 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		6F64CF632A7452BB003CFBB7 /* SelectTargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetController.swift; sourceTree = "<group>"; };
+		6F64CF652A745315003CFBB7 /* TargetProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetProfileTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +112,12 @@
 		6F64CEF72A73E143003CFBB7 /* hackathon2808 */ = {
 			isa = PBXGroup;
 			children = (
+				6F64CF602A744745003CFBB7 /* Extensions */,
 				6F64CF4C2A74128E003CFBB7 /* Managers */,
 				6F64CF162A73E3D3003CFBB7 /* Network */,
 				6F64CF122A73E2A1003CFBB7 /* Application */,
 				6F64CF152A73E3B3003CFBB7 /* Initial */,
+				6F64CF5D2A7444B3003CFBB7 /* Profile */,
 				6F64CF392A740C62003CFBB7 /* Main */,
 				6F64CF422A740D36003CFBB7 /* Tabbar */,
 				6F64CF222A73E63C003CFBB7 /* UI */,
@@ -229,7 +239,6 @@
 			children = (
 				6F64CF3E2A740CB5003CFBB7 /* OffersController.swift */,
 				6F64CF402A740D0B003CFBB7 /* UnivercityController.swift */,
-				6F64CF4A2A7411EF003CFBB7 /* ProfileViewController.swift */,
 				6F64CF592A743E46003CFBB7 /* AboutFacultyViewController.swift */,
 			);
 			path = Controller;
@@ -260,6 +269,25 @@
 				6F64CF572A742E25003CFBB7 /* FacultyCell.swift */,
 			);
 			path = UnivercityControllerCells;
+			sourceTree = "<group>";
+		};
+		6F64CF5D2A7444B3003CFBB7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF4A2A7411EF003CFBB7 /* ProfileViewController.swift */,
+				6F64CF5E2A7444DF003CFBB7 /* Profile.storyboard */,
+				6F64CF632A7452BB003CFBB7 /* SelectTargetController.swift */,
+				6F64CF652A745315003CFBB7 /* TargetProfileTableCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6F64CF602A744745003CFBB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF612A744758003CFBB7 /* UIView + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F64CF5F2A7444DF003CFBB7 /* Profile.storyboard in Resources */,
 				6F64CF442A740D43003CFBB7 /* Tabbar.storyboard in Resources */,
 				6F64CF052A73E144003CFBB7 /* LaunchScreen.storyboard in Resources */,
 				6F64CF3D2A740C9E003CFBB7 /* Offers.storyboard in Resources */,
@@ -356,6 +385,8 @@
 				6F64CF4E2A74129B003CFBB7 /* UserManager.swift in Sources */,
 				6F64CF182A73E431003CFBB7 /* NetCore.swift in Sources */,
 				6F64CEFD2A73E143003CFBB7 /* InitialViewController.swift in Sources */,
+				6F64CF622A744758003CFBB7 /* UIView + Extensions.swift in Sources */,
+				6F64CF662A745315003CFBB7 /* TargetProfileTableCell.swift in Sources */,
 				6F64CF1E2A73E567003CFBB7 /* NetworkManager.swift in Sources */,
 				6F64CF5C2A743FA5003CFBB7 /* MainModel.swift in Sources */,
 				6F64CF292A73E690003CFBB7 /* Spinner.swift in Sources */,
@@ -364,6 +395,7 @@
 				6F64CF512A7419BB003CFBB7 /* UniversityCell.swift in Sources */,
 				6F64CEFB2A73E143003CFBB7 /* SceneDelegate.swift in Sources */,
 				6F64CF462A740E32003CFBB7 /* TabBarController.swift in Sources */,
+				6F64CF642A7452BB003CFBB7 /* SelectTargetController.swift in Sources */,
 				6F64CF5A2A743E46003CFBB7 /* AboutFacultyViewController.swift in Sources */,
 				6F64CF4B2A7411EF003CFBB7 /* ProfileViewController.swift in Sources */,
 				6F64CF542A742845003CFBB7 /* ImageCell.swift in Sources */,

@@ -54,9 +54,10 @@ final class OffersController: BaseViewController {
     }
     
     @objc private func pushProfileController() {
-        guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {
+        guard let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {
             return
         }
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     
