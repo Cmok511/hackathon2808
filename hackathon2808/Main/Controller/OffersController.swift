@@ -11,6 +11,7 @@ import SDWebImage
 final class OffersController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    private let model = MainModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,7 @@ extension OffersController: UITableViewDelegate {
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "UnivercityController") as? UnivercityController else {
             return
         }
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

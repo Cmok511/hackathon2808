@@ -23,6 +23,6 @@ final class NetworkManager {
         }
     }
     
-    static let baseURLString = "http://10.2.0.23:90"
+    static let baseURLString = "http://10.2.0.23:81/docs"
 }
 
