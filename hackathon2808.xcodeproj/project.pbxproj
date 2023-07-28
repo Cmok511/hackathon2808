@@ -550,6 +550,7 @@
 				DEVELOPMENT_TEAM = 5JKHA34QG7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hackathon2808/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Копилка";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -578,6 +579,7 @@
 				DEVELOPMENT_TEAM = 5JKHA34QG7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hackathon2808/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Копилка";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
