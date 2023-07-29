@@ -35,6 +35,13 @@ final class ProfileModel {
         let configuration = MultipartRequestConfiguration(url: url, media: [media], parameters: [:])
         return CoreNetwork.request(method: .MultipartPOST(configuration: configuration))
     }
+    //MARK: - getMyProfile
+    
+    func getMyProfile() -> Promise<DApi<GettingUser>> {
+        let utlString = NetworkManager.baseURLString + "/api/users/me/"
+        let url = URL(string: utlString)!
+        return CoreNetwork.request(method: .GET(url: url))
+    }
     
 }
 
@@ -44,7 +51,9 @@ struct AchivmentsHelper {
 }
 
 struct UpdatingUser: Codable {
-    let fullName: String?
+    let firstName: String?
+    let lastName: String?
+    let patronymic: String?
     let birthdate: Int?
     let gender: Int?
 }

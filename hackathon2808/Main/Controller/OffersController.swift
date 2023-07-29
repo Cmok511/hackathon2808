@@ -72,6 +72,7 @@ final class OffersController: BaseViewController {
         //load avarar
         let url = URL(string: UserManager.shared.avatar ?? "")
         
+        
         SDWebImageManager.shared.loadImage(with: url, progress: nil) { image, _, _, _, _, _ in
             if let image {
                 userProfileButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -93,6 +94,13 @@ final class OffersController: BaseViewController {
     
     @IBAction private func notificationsBattonTapped() {
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "NotificationsController") as? NotificationsController else {
+            return
+        }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction private func filterButtonTapped() {
+        guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "FilterController") as? FilterController else {
             return
         }
         navigationController?.pushViewController(viewController, animated: true)

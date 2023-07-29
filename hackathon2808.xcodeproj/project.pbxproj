@@ -64,6 +64,15 @@
 		6F64CF982A757DD8003CFBB7 /* GenderTxetField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF972A757DD8003CFBB7 /* GenderTxetField.swift */; };
 		6F64CF9A2A757FC0003CFBB7 /* BirthDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF992A757FC0003CFBB7 /* BirthDateController.swift */; };
 		6F64CF9C2A757FFE003CFBB7 /* UIDatePickerController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF9B2A757FFE003CFBB7 /* UIDatePickerController + ext.swift */; };
+		6F64CF9E2A759891003CFBB7 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CF9D2A759891003CFBB7 /* CreditModel.swift */; };
+		6F64CFA12A759B3B003CFBB7 /* Appeals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F64CFA02A759B3B003CFBB7 /* Appeals.storyboard */; };
+		6F64CFA32A759B56003CFBB7 /* AppealsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFA22A759B56003CFBB7 /* AppealsController.swift */; };
+		6F64CFA52A759D6B003CFBB7 /* AppealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFA42A759D6B003CFBB7 /* AppealsTableViewCell.swift */; };
+		6F64CFA72A75A164003CFBB7 /* AppealsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFA62A75A164003CFBB7 /* AppealsModel.swift */; };
+		6F64CFA92A75A63B003CFBB7 /* PigiBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */; };
+		6F64CFAB2A75ADDD003CFBB7 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFAA2A75ADDD003CFBB7 /* FilterController.swift */; };
+		6F64CFAD2A75B1AD003CFBB7 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFAC2A75B1AD003CFBB7 /* CityTableViewCell.swift */; };
+		6F64CFAF2A75B1DF003CFBB7 /* CitySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CFAE2A75B1DF003CFBB7 /* CitySelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +129,15 @@
 		6F64CF972A757DD8003CFBB7 /* GenderTxetField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTxetField.swift; sourceTree = "<group>"; };
 		6F64CF992A757FC0003CFBB7 /* BirthDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateController.swift; sourceTree = "<group>"; };
 		6F64CF9B2A757FFE003CFBB7 /* UIDatePickerController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePickerController + ext.swift"; sourceTree = "<group>"; };
+		6F64CF9D2A759891003CFBB7 /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
+		6F64CFA02A759B3B003CFBB7 /* Appeals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Appeals.storyboard; sourceTree = "<group>"; };
+		6F64CFA22A759B56003CFBB7 /* AppealsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppealsController.swift; sourceTree = "<group>"; };
+		6F64CFA42A759D6B003CFBB7 /* AppealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppealsTableViewCell.swift; sourceTree = "<group>"; };
+		6F64CFA62A75A164003CFBB7 /* AppealsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppealsModel.swift; sourceTree = "<group>"; };
+		6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigiBankCell.swift; sourceTree = "<group>"; };
+		6F64CFAA2A75ADDD003CFBB7 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		6F64CFAC2A75B1AD003CFBB7 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		6F64CFAE2A75B1DF003CFBB7 /* CitySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +186,7 @@
 				6F64CF392A740C62003CFBB7 /* Main */,
 				6F64CF792A7523F0003CFBB7 /* Credits */,
 				6F64CF802A752DCC003CFBB7 /* Help */,
+				6F64CF9F2A759B2D003CFBB7 /* Appeals */,
 				6F64CF422A740D36003CFBB7 /* Tabbar */,
 				6F64CF222A73E63C003CFBB7 /* UI */,
 				6F64CF142A73E2BF003CFBB7 /* SupportingFiles */,
@@ -292,6 +311,8 @@
 				6F64CF402A740D0B003CFBB7 /* UnivercityController.swift */,
 				6F64CF592A743E46003CFBB7 /* AboutFacultyViewController.swift */,
 				6F64CF872A7534B9003CFBB7 /* NotificationsController.swift */,
+				6F64CFAA2A75ADDD003CFBB7 /* FilterController.swift */,
+				6F64CFAE2A75B1DF003CFBB7 /* CitySelectViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +330,7 @@
 			children = (
 				6F64CF522A74282B003CFBB7 /* UnivercityControllerCells */,
 				6F64CF502A7419BB003CFBB7 /* UniversityCell.swift */,
+				6F64CFAC2A75B1AD003CFBB7 /* CityTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -383,6 +405,7 @@
 				6F64CF7A2A75242D003CFBB7 /* Credits.storyboard */,
 				6F64CF7C2A75243C003CFBB7 /* CreditsController.swift */,
 				6F64CF7E2A75286F003CFBB7 /* CreditsTableViewCell.swift */,
+				6F64CF9D2A759891003CFBB7 /* CreditModel.swift */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -393,6 +416,7 @@
 				6F64CF812A752DDB003CFBB7 /* Help.storyboard */,
 				6F64CF832A752DE7003CFBB7 /* HelpViewController.swift */,
 				6F64CF852A753044003CFBB7 /* HelpTableViewCell.swift */,
+				6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -412,6 +436,17 @@
 				6F64CF992A757FC0003CFBB7 /* BirthDateController.swift */,
 			);
 			path = PresentationControllers;
+			sourceTree = "<group>";
+		};
+		6F64CF9F2A759B2D003CFBB7 /* Appeals */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CFA42A759D6B003CFBB7 /* AppealsTableViewCell.swift */,
+				6F64CFA02A759B3B003CFBB7 /* Appeals.storyboard */,
+				6F64CFA22A759B56003CFBB7 /* AppealsController.swift */,
+				6F64CFA62A75A164003CFBB7 /* AppealsModel.swift */,
+			);
+			path = Appeals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F64CF5F2A7444DF003CFBB7 /* Profile.storyboard in Resources */,
+				6F64CFA12A759B3B003CFBB7 /* Appeals.storyboard in Resources */,
 				6F64CF442A740D43003CFBB7 /* Tabbar.storyboard in Resources */,
 				6F64CF7B2A75242D003CFBB7 /* Credits.storyboard in Resources */,
 				6F64CF052A73E144003CFBB7 /* LaunchScreen.storyboard in Resources */,
@@ -508,6 +544,7 @@
 			files = (
 				6F64CF582A742E25003CFBB7 /* FacultyCell.swift in Sources */,
 				6F64CF382A7406F2003CFBB7 /* LoginViewController.swift in Sources */,
+				6F64CFAD2A75B1AD003CFBB7 /* CityTableViewCell.swift in Sources */,
 				6F64CF752A74F118003CFBB7 /* AchivmentsTAbleViewCell.swift in Sources */,
 				6F64CF962A757C6D003CFBB7 /* SelectGengerController.swift in Sources */,
 				6F64CF8C2A75448B003CFBB7 /* Int + Extensions.swift in Sources */,
@@ -522,16 +559,23 @@
 				6F64CF682A74D9EA003CFBB7 /* DocksViewController.swift in Sources */,
 				6F64CF622A744758003CFBB7 /* UIView + Extensions.swift in Sources */,
 				6F64CF8E2A755BBC003CFBB7 /* WelcomeViewController.swift in Sources */,
+				6F64CFA52A759D6B003CFBB7 /* AppealsTableViewCell.swift in Sources */,
 				6F64CF662A745315003CFBB7 /* TargetProfileTableCell.swift in Sources */,
+				6F64CFA92A75A63B003CFBB7 /* PigiBankCell.swift in Sources */,
 				6F64CF862A753044003CFBB7 /* HelpTableViewCell.swift in Sources */,
+				6F64CFAB2A75ADDD003CFBB7 /* FilterController.swift in Sources */,
 				6F64CF1E2A73E567003CFBB7 /* NetworkManager.swift in Sources */,
 				6F64CF5C2A743FA5003CFBB7 /* MainModel.swift in Sources */,
+				6F64CF9E2A759891003CFBB7 /* CreditModel.swift in Sources */,
 				6F64CF292A73E690003CFBB7 /* Spinner.swift in Sources */,
+				6F64CFAF2A75B1DF003CFBB7 /* CitySelectViewController.swift in Sources */,
 				6F64CF9A2A757FC0003CFBB7 /* BirthDateController.swift in Sources */,
 				6F64CF932A757BDC003CFBB7 /* Constants.swift in Sources */,
+				6F64CFA32A759B56003CFBB7 /* AppealsController.swift in Sources */,
 				6F64CF3F2A740CB5003CFBB7 /* OffersController.swift in Sources */,
 				6F64CF732A74F013003CFBB7 /* ProfileModel.swift in Sources */,
 				6F64CF7F2A75286F003CFBB7 /* CreditsTableViewCell.swift in Sources */,
+				6F64CFA72A75A164003CFBB7 /* AppealsModel.swift in Sources */,
 				6F64CEF92A73E143003CFBB7 /* AppDelegate.swift in Sources */,
 				6F64CF882A7534B9003CFBB7 /* NotificationsController.swift in Sources */,
 				6F64CF512A7419BB003CFBB7 /* UniversityCell.swift in Sources */,

@@ -20,12 +20,10 @@ final class UniversityCell: UITableViewCell {
     @IBOutlet weak var avgMarkLabel: UILabel!
     
     @IBOutlet private weak var backView: UIView!
-    @IBOutlet weak var moreInfoButton: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        moreInfoButton.addRadius()
         backView.addRadius()
         
     }

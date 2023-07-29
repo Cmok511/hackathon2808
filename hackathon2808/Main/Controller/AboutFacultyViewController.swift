@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Toast
 
 final class AboutFacultyViewController: BaseViewController {
     
@@ -19,18 +20,26 @@ final class AboutFacultyViewController: BaseViewController {
     
     @IBOutlet weak var addTargetButton: UIButton!
     
+    @IBOutlet weak var sendApealButton: UIButton!
+    
     var field: GettingField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         addTargetButton.addRadius()
+        sendApealButton.addRadius()
     }
     
     private func configure() {
         titleLabel.text = field?.name
         avgMarkLabel.text = "Средний проходной балл \(field?.minMark ?? 0)"
-        priceLabel.text = field?.minMark?.price
+        priceLabel.text = field?.price?.price
         descriptionLAbel.text = field?.description
     }
+    
+    @IBAction func sendAppeal(_ sender: UIButton) {
+        self.view.makeToast("Заявление отправлено")
+    }
+    
 }

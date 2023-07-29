@@ -42,4 +42,9 @@ struct GettingUser: Codable {
     let id: Int?
     let lastActivity: Int?
     let avatar: String?
+    let firstName: String?
+    let lastName: String?
+    let patronymic: String?
+    let birthdate: Int?
+    let gender: Int?
 }

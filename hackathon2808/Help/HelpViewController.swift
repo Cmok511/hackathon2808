@@ -30,9 +30,13 @@ extension HelpViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HelpTableViewCell.reuseID, for: indexPath) as! HelpTableViewCell
-        return cell
-        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PigiBankCell.reuseID, for: indexPath) as! PigiBankCell
+            return cell
+        } else  {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HelpTableViewCell.reuseID, for: indexPath) as! HelpTableViewCell
+            return cell
+        }
     }
     
     

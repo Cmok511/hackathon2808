@@ -40,6 +40,7 @@ final class UnivercityController: BaseViewController {
 
     private func setupUI() {
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     //MARK: getFaculty
@@ -72,12 +73,12 @@ final class UnivercityController: BaseViewController {
     }
     
     
-    @objc private func aboutFacultyButtonTapped(_ sender: UIButton) {
+    @objc private func aboutFacultyButtonTapped(index: Int) {
         print("aboutFacultyButtonTapped")
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "AboutFacultyViewController") as? AboutFacultyViewController else {
             return
         }
-        viewController.field = faculty?.fields?[sender.tag]
+        viewController.field = faculty?.fields?[index]
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -112,10 +113,20 @@ extension UnivercityController: UITableViewDataSource {
             return cell
         case .faculty:
             let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reuseID, for: indexPath) as! FacultyCell
-            cell.aboutButton.tag = indexPath.row
-            cell.aboutButton.addTarget(self, action: #selector(aboutFacultyButtonTapped), for: .touchUpInside)
             cell.configure(field: faculty?.fields?[indexPath.row])
             return cell
+        }
+    }
+}
+//MARK: - UITableViewDelegate
+
+extension UnivercityController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch TableSections.allCases[indexPath.section] {
+        case .image: break
+        case .info: break
+        case .faculty:
+            aboutFacultyButtonTapped(index: indexPath.row)
         }
     }
 }

@@ -78,3 +78,9 @@ struct GettingField: Codable {
     let price: Int?
     let id: Int?
 }
+
+
+struct City: Codable {
+    let name: String
+    let id: Int
+}

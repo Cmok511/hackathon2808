@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import PromiseKit
 import Toast
+import SDWebImage
 
 final class ProfileViewController: BaseViewController {
     
@@ -33,11 +34,43 @@ final class ProfileViewController: BaseViewController {
     }
     //
     
+    private var user: GettingUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.addRadius()
         genderTxetField.delegate = self
         birthDateTextField.delegate = self
+        getMyProfile()
+    }
+    
+
+    //MARK: getMyProfile
+    private func getMyProfile() {
+        spinner.startAniamtion()
+        firstly {
+            model.getMyProfile()
+        }.done { data in
+            self.spinner.stopAnimation()
+            if data.message?.lowercased() == "ok" {
+                UserManager.shared.setNewValue(user: data.data)
+                self.nameTextField.text = data.data?.firstName
+                self.secondNameTxetField.text = data.data?.lastName
+                self.patronomicTextField.text = data.data?.patronymic
+                self.birthDateTextField.text = data.data?.birthdate?.toDay
+                self.genderTxetField.text = Gender.allCases[data.data?.gender ?? 0].ruTitleOfGender
+                UserManager.shared.avatar = data.data?.avatar
+                guard let stringURL = data.data?.avatar else { return }
+                guard let url = URL(string: stringURL) else { return }
+                self.avatarImageView.sd_imageIndicator = SDWebImageActivityIndicator.white
+                self.avatarImageView.sd_setImage(with: url)
+                
+            } else {
+            }
+        }.catch { error in
+            self.spinner.stopAnimation()
+            print(error)
+        }
     }
     
     
@@ -66,9 +99,11 @@ final class ProfileViewController: BaseViewController {
     
     
     private func updateUser() {
-        let fullName = (nameTextField.text ?? "") + " " + (secondNameTxetField.text ?? "") + " " + (patronomicTextField.text ?? "")
-        
-        let user = UpdatingUser(fullName: fullName, birthdate: selectedBirthDate, gender: selectedGender?.rawValue)
+        let user = UpdatingUser(firstName: nameTextField.text,
+                                lastName: secondNameTxetField.text,
+                                patronymic: patronomicTextField.text,
+                                birthdate: selectedBirthDate,
+                                gender: selectedGender?.rawValue)
         spinner.startAniamtion()
         firstly {
             model.updateUser(user: user)

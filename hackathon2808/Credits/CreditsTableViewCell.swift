@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 final class CreditsTableViewCell: UITableViewCell {
     static let reuseID = "CreditsTableViewCell"
@@ -20,9 +21,15 @@ final class CreditsTableViewCell: UITableViewCell {
     @IBOutlet private weak var sendAppealButton: UIButton!
     @IBOutlet private weak var backView: UIView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         sendAppealButton.addRadius()
         backView.addRadius()
+    }
+    
+    
+    func configure(offer: GettingOffer?) {
+        
     }
 }
