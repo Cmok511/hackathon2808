@@ -47,16 +47,20 @@ final class UnivercityController: BaseViewController {
         guard let facultyId else {
             self.view.makeToast("нет id")
             return}
+        startSpinnerBlure()
         firstly {
             model.getFacultyWith(facultyId: facultyId)
         }.done { data in
             if data.message?.lowercased() == "ok" {
                 self.faculty = data.data
                 self.title = self.faculty?.name
+                self.stopSpinnerBlure()
             } else {
+                self.spinner.stopAnimation()
                 self.view.makeToast(data.description)
             }
         }.catch { error in
+            self.stopSpinnerBlure()
             self.view.makeToast("Что-то пошло не так")
             self.view.makeToast(error.localizedDescription)
         }
@@ -91,7 +95,7 @@ extension UnivercityController: UITableViewDataSource {
         case .info:
             return 1
         case .faculty:
-            return 1
+            return faculty?.fields?.count ?? 0
         }
     }
     
@@ -103,10 +107,12 @@ extension UnivercityController: UITableViewDataSource {
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCell.reuseID, for: indexPath) as! DescriptionCell
+            cell.configure(faculty: faculty)
             return cell
         case .faculty:
             let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reuseID, for: indexPath) as! FacultyCell
             cell.aboutButton.addTarget(self, action: #selector(aboutFacultyButtonTapped), for: .touchUpInside)
+            cell.configure(field: faculty?.fields?[indexPath.row])
             return cell
         }
     }

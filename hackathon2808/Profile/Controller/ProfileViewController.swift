@@ -11,7 +11,7 @@ import UIKit
 final class ProfileViewController: BaseViewController {
     
     @IBOutlet weak var avatarImageView: UIImageView!    //for configureImagePicker
-    private var avatarPicker = UIImagePickerController()
+    private lazy var avatarPicker = UIImagePickerController()
     private var selectedAvatar: UIImage?
     @IBOutlet private weak var nextButton: UIButton!
     

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+
 final class OnlineDiaryController: BaseViewController {
     
     @IBOutlet private weak var selectSchool: UITextField!
@@ -26,6 +28,6 @@ final class OnlineDiaryController: BaseViewController {
     
     
     @IBAction private func finishButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+       
     }
 }

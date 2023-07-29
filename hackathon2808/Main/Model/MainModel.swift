@@ -64,12 +64,17 @@ struct GettingFaculty: Codable {
     let name: String?
     let id: Int?
     let university: GettingUniversity?
+    let description: String?
     let avgMark: Float?
     let fields: [GettingField]?
+    let minPrice: Int?
 }
 
 struct GettingField: Codable {
     let name: String?
     let url: String?
+    let description: String?
+    let minMark: Int?
+    let price: Int?
     let id: Int?
 }

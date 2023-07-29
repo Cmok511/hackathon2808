@@ -17,10 +17,10 @@ final class DocksViewController: BaseViewController {
     @IBOutlet private weak var nextButton: UIButton!
     
     
-    private var passport1Picker = UIImagePickerController()
-    private var passport2Picker = UIImagePickerController()
-    private var snilsPicker = UIImagePickerController()
-    private var innPicker = UIImagePickerController()
+    private lazy var passport1Picker = UIImagePickerController()
+    private lazy var passport2Picker = UIImagePickerController()
+    private lazy var snilsPicker = UIImagePickerController()
+    private lazy var innPicker = UIImagePickerController()
     
     
     //ForSend

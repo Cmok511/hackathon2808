@@ -38,15 +38,19 @@ final class OffersController: BaseViewController {
     }
     
     private func getAllFaculty() {
+        startSpinnerBlure()
         firstly {
             model.getAllFaculty()
         }.done { data in
             if data.message?.lowercased() == "ok" {
+                self.stopSpinnerBlure()
                 self.facultyArray = data.data ?? []
             } else {
+                self.stopSpinnerBlure()
                 self.view.makeToast(data.description)
             }
         }.catch { error in
+            self.stopSpinnerBlure()
             print(error.localizedDescription)
             self.view.makeToast("Что-то пошло не так")
         }

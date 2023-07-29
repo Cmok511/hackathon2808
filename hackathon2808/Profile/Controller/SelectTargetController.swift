@@ -27,12 +27,19 @@ final class SelectTargetController: BaseViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func goToTabBar(_ sender: UIButton) {
+        guard let viewController = UIStoryboard(name: "Tabbar", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {
+            return
+        }
+        viewController.modalPresentationStyle = .overFullScreen
+        self.present(viewController, animated: true)
+    }
     
     
 }
 extension SelectTargetController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

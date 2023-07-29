@@ -54,11 +54,12 @@ final class LoginViewController: BaseViewController {
             if data.message?.lowercased() == "ok" {
                 UserManager.shared.setNewValue(user: data.data?.user)
                 NetworkManager.accessToken = data.data?.token
-                guard let viewController = UIStoryboard(name: "Tabbar", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {
-                    return
-                }
-                viewController.modalPresentationStyle = .overFullScreen
-                self.present(viewController, animated: true)
+//                guard let viewController = UIStoryboard(name: "Tabbar", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {
+//                    return
+//                }
+//                viewController.modalPresentationStyle = .overFullScreen
+//                self.present(viewController, animated: true)
+                self.performSegue(withIdentifier: "WelcomeViewController", sender: self)
             } else  {
                 self.view.makeToast(data.message, duration: 0.6)
             }

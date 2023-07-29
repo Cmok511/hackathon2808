@@ -29,8 +29,7 @@ final class ImageCell: UITableViewCell {
             coverImageView.topAnchor.constraint(equalTo: topAnchor),
             coverImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             coverImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            coverImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            coverImageView.heightAnchor.constraint(equalToConstant: 320)
+            coverImageView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
