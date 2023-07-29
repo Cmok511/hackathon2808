@@ -87,6 +87,12 @@ final class OffersController: BaseViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction private func notificationsBattonTapped() {
+        guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "NotificationsController") as? NotificationsController else {
+            return
+        }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     
 }
 //MARK: - UITableViewDataSource
