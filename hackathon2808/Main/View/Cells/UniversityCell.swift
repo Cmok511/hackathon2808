@@ -34,7 +34,8 @@ final class UniversityCell: UITableViewCell {
         
         avgMarkLabel.text = "Средний проходной балл \(faculty.avgMark ?? 0)"
         titleLabel.text = faculty.university?.name
-        
+        facultyLabel.text = faculty.name
+        addressLabel.text = faculty.university?.city?.name
         if let urlString =  faculty.university?.photo {
             guard let image = URL(string: urlString) else { return }
             imageUniver.sd_imageIndicator = SDWebImageActivityIndicator.gray

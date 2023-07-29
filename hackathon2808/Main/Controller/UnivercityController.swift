@@ -8,13 +8,26 @@
 import Foundation
 import UIKit
 import SDWebImage
+import PromiseKit
+import Toast
 
 final class UnivercityController: BaseViewController {
+   
+    private let model = MainModel()
     
     private enum TableSections: Int, CaseIterable {
         case image
         case info
         case faculty
+    }
+    //MARK: open
+    var facultyId: Int?
+    //
+    
+    private var faculty: GettingFaculty? {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     @IBOutlet private weak var tableView: UITableView!
@@ -22,10 +35,31 @@ final class UnivercityController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        getFaculty()
     }
 
     private func setupUI() {
         tableView.dataSource = self
+    }
+    
+    //MARK: getFaculty
+    private func getFaculty() {
+        guard let facultyId else {
+            self.view.makeToast("нет id")
+            return}
+        firstly {
+            model.getFacultyWith(facultyId: facultyId)
+        }.done { data in
+            if data.message?.lowercased() == "ok" {
+                self.faculty = data.data
+                self.title = self.faculty?.name
+            } else {
+                self.view.makeToast(data.description)
+            }
+        }.catch { error in
+            self.view.makeToast("Что-то пошло не так")
+            self.view.makeToast(error.localizedDescription)
+        }
     }
     
     
@@ -65,6 +99,7 @@ extension UnivercityController: UITableViewDataSource {
         switch TableSections.allCases[indexPath.section] {
         case .image:
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageCell.reuseID, for: indexPath) as! ImageCell
+            cell.configure(faculty: faculty)
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCell.reuseID, for: indexPath) as! DescriptionCell

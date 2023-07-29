@@ -101,12 +101,14 @@ extension OffersController: UITableViewDataSource {
         return cell
     }
 }
+
 extension OffersController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "UnivercityController") as? UnivercityController else {
             return
         }
         viewController.hidesBottomBarWhenPushed = true
+        viewController.facultyId = facultyArray[indexPath.row].id
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -13,4 +13,9 @@ final class DescriptionCell: UITableViewCell {
     
     
     
+    
+    func configure(faculty: GettingFaculty?) {
+        
+    }
+    
 }

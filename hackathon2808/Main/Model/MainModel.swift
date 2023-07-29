@@ -26,6 +26,14 @@ final class MainModel {
         let url = URL(string: urlString)!
         return CoreNetwork.request(method: .GET(url: url))
     }
+    
+    
+    //MARK: getFacultyWith
+    func getFacultyWith(facultyId: Int) ->Promise<DApi<GettingFaculty>> {
+        let urlString = NetworkManager.baseURLString + "/api/faculties/\(facultyId)/"
+        let url = URL(string: urlString)!
+        return CoreNetwork.request(method: .GET(url: url))
+    }
 
 }
 
