@@ -14,11 +14,35 @@ import PromiseKit
 final class MainModel {
     
     //MARK:  getAllUniversity
-    func getAllUniversity() -> Promise<DApi<GettingUniversity>>  {
-        let urlString = NetworkManager.baseURLString + ""
+    func getAllUniversity() -> Promise<DApi<[GettingUniversity]>>  {
+        let urlString = NetworkManager.baseURLString + "/api/cp/universities/"
         let url = URL(string: urlString)!
         return CoreNetwork.request(method: .GET(url: url))
     }
+    
+    //MARK:  getAllUniversity
+    func getAllFaculty() -> Promise<DApi<[GettingFaculty]>>  {
+        let urlString = NetworkManager.baseURLString + "/api/faculties/"
+        let url = URL(string: urlString)!
+        return CoreNetwork.request(method: .GET(url: url))
+    }
+
+}
+
+
+struct GettingUniversity: Codable {
+    let name: String?
+    let lat: String?
+    let lon: String?
+    let url: String?
+    let id: Int?
+    let photo: String?
+    let city: GettingCity?
+}
+
+struct GettingCity: Codable {
+    let name: String?
+    let id: Int?
 }
 
 
@@ -28,6 +52,16 @@ struct DApi <T: Codable>: Codable {
     let data: T?
 }
 
-struct GettingUniversity: Codable {
-    
+struct GettingFaculty: Codable {
+    let name: String?
+    let id: Int?
+    let university: GettingUniversity?
+    let avgMark: Float?
+    let fields: [GettingField]?
+}
+
+struct GettingField: Codable {
+    let name: String?
+    let url: String?
+    let id: Int?
 }

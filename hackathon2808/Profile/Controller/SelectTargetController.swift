@@ -11,6 +11,7 @@ import UIKit
 final class SelectTargetController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,16 @@ final class SelectTargetController: BaseViewController {
     }
     private func setupUI() {
         tableView.dataSource = self
+        nextButton.addRadius()
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
+    
+    @IBAction func goToSelectTarget(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+    
 }
 extension SelectTargetController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -124,6 +124,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Продолжить">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="enter" destination="Bcb-jN-YgR" eventType="touchUpInside" id="a7P-M2-t2a"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,6 +162,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qcR-fb-DsD"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="kac-2D-Vcj" id="IZm-dB-ZLW"/>
+                        <outlet property="nextButton" destination="hqd-jt-Fyd" id="g7g-Ur-0D5"/>
+                        <outlet property="passwordTextField" destination="f8N-bx-QWy" id="jQg-Ke-9tA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqe-XE-dMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

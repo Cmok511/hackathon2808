@@ -7,26 +7,52 @@
 import Foundation
 import UIKit
 import SDWebImage
+import PromiseKit
+import Toast
 
 final class OffersController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     private let model = MainModel()
+   
+    private var facultyArray: [GettingFaculty] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        getAllFaculty()
     }
         
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationController()
+    }
+    
     private func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setNavigationController()
+    private func getAllFaculty() {
+        firstly {
+            model.getAllFaculty()
+        }.done { data in
+            if data.message?.lowercased() == "ok" {
+                self.facultyArray = data.data ?? []
+            } else {
+                self.view.makeToast(data.description)
+            }
+        }.catch { error in
+            print(error.localizedDescription)
+            self.view.makeToast("Что-то пошло не так")
+        }
     }
+    
+    
     
     private func setNavigationController() {
         // navbarView avatarView
@@ -66,11 +92,12 @@ final class OffersController: BaseViewController {
 //MARK: - UITableViewDataSource
 extension OffersController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        facultyArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UniversityCell.reuseID, for: indexPath) as! UniversityCell
+        cell.configure(faculty: facultyArray[indexPath.row])
         return cell
     }
 }

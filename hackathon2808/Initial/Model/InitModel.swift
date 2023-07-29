@@ -6,7 +6,39 @@
 //
 
 import Foundation
+import PromiseKit
 
 final class InitModel {
     
+    //MARK: enterInApp
+    func enterInApp(body: EmailPasswordBody) -> Promise<DApi<TokenWithUser>> {
+        let utlString = NetworkManager.baseURLString + "/api/sign-in/email-password/"
+        let url = URL(string: utlString)!
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let data = try! encoder.encode(body)
+        return CoreNetwork.request(method: .POST(url: url, body: data))
+    }
+    
+}
+
+struct EmailPasswordBody: Encodable {
+    let email: String?
+    let password: String?
+}
+
+
+struct TokenWithUser: Codable {
+    let user: GettingUser?
+    let token: String?
+}
+
+struct GettingUser: Codable {
+    let email: String?
+    let tel: String?
+    let isActive: Bool?
+    let isSuperuser: Bool?
+    let fullName: String?
+    let id: Int?
+    let lastActivity: Int?
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 final class UniversityCell: UITableViewCell {
     static let reuseID = "UniversityCell"
@@ -16,12 +17,29 @@ final class UniversityCell: UITableViewCell {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var facultyLabel: UILabel!
+    @IBOutlet weak var avgMarkLabel: UILabel!
     
+    @IBOutlet private weak var backView: UIView!
     @IBOutlet weak var moreInfoButton: UIButton!
     
     
-    func configure() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        moreInfoButton.addRadius()
+        backView.addRadius()
         
+    }
+    
+    func configure(faculty: GettingFaculty) {
+        
+        avgMarkLabel.text = "Средний проходной балл \(faculty.avgMark ?? 0)"
+        titleLabel.text = faculty.university?.name
+        
+        if let urlString =  faculty.university?.photo {
+            guard let image = URL(string: urlString) else { return }
+            imageUniver.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            imageUniver.sd_setImage(with: image)
+        }
     }
     
     

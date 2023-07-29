@@ -18,8 +18,8 @@ extension UIView {
     
     func addGreyBorder() {
         clipsToBounds = true
-        layer.borderWidth = 1
-        layer.borderColor = UIColor(named: "LightTextColor")?.cgColor
+        layer.borderWidth = 2
+        layer.borderColor = UIColor(named: "TextColor")?.cgColor
     }
     
     
