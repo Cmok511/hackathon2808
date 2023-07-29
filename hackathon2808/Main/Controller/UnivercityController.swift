@@ -72,11 +72,12 @@ final class UnivercityController: BaseViewController {
     }
     
     
-    @objc private func aboutFacultyButtonTapped() {
+    @objc private func aboutFacultyButtonTapped(_ sender: UIButton) {
         print("aboutFacultyButtonTapped")
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "AboutFacultyViewController") as? AboutFacultyViewController else {
             return
         }
+        viewController.field = faculty?.fields?[sender.tag]
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -111,6 +112,7 @@ extension UnivercityController: UITableViewDataSource {
             return cell
         case .faculty:
             let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reuseID, for: indexPath) as! FacultyCell
+            cell.aboutButton.tag = indexPath.row
             cell.aboutButton.addTarget(self, action: #selector(aboutFacultyButtonTapped), for: .touchUpInside)
             cell.configure(field: faculty?.fields?[indexPath.row])
             return cell

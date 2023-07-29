@@ -103,7 +103,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaL-cw-mK2">
                                                                 <rect key="frame" x="20" y="8" width="353" height="44"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,7 +121,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eou-BF-eCg">
                                                                 <rect key="frame" x="20" y="8" width="353" height="44"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,7 +139,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfp-de-TZX">
                                                                 <rect key="frame" x="20" y="8" width="353" height="44"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -222,7 +222,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Далее"/>
                                         <connections>
-                                            <segue destination="8Su-eo-kfm" kind="show" id="wu2-kl-FuV"/>
+                                            <action selector="nextButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ffp-1E-zrS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -250,7 +250,14 @@
                     <navigationItem key="navigationItem" title="Информация о вас шаг 1 из 5" style="editor" id="glH-Sx-ZTu"/>
                     <connections>
                         <outlet property="avatarImageView" destination="S7w-ne-LB6" id="LW4-9I-dYx"/>
+                        <outlet property="avatarSpinner" destination="jY0-Hi-GoK" id="6bt-kj-co0"/>
+                        <outlet property="birthDateTextField" destination="8wb-re-6fr" id="Q8m-fO-oMA"/>
+                        <outlet property="genderTxetField" destination="AJI-Wt-x7S" id="ih2-L2-46O"/>
+                        <outlet property="nameTextField" destination="AaL-cw-mK2" id="eW3-gV-aSk"/>
                         <outlet property="nextButton" destination="ys0-yq-Z2Z" id="NBC-Tn-Cw7"/>
+                        <outlet property="patronomicTextField" destination="pfp-de-TZX" id="Ms7-JZ-kMj"/>
+                        <outlet property="secondNameTxetField" destination="eou-BF-eCg" id="pqd-XD-ySE"/>
+                        <segue destination="8Su-eo-kfm" kind="show" identifier="DocksViewController" id="Vxq-fT-GbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -925,11 +932,210 @@
             </objects>
             <point key="canvasLocation" x="-45.038167938931295" y="-27.464788732394368"/>
         </scene>
+        <!--Select Gender Controller-->
+        <scene sceneID="bU3-7M-kMz">
+            <objects>
+                <viewController storyboardIdentifier="SelectGenderController" id="pTX-QH-9Lo" customClass="SelectGenderController" customModule="FamilyVibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgd-O5-VVY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="clS-Qq-3dL">
+                                <rect key="frame" x="0.0" y="122.33333333333331" width="393" height="153"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="XCb-i5-SOU"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GenderTableViewCell" rowHeight="52" id="Z71-KJ-xCs" customClass="GenderTableViewCell" customModule="FamilyVibe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z71-KJ-xCs" id="dmA-e6-6zs">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioButton" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-Ax-VVD">
+                                                    <rect key="frame" x="28" y="11.666666666666664" width="34" height="29"/>
+                                                    <color key="tintColor" name="AccentColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="eqd-es-IN1"/>
+                                                        <constraint firstAttribute="height" constant="29" id="nWr-NV-q9F"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не указывать" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjd-mQ-G42">
+                                                    <rect key="frame" x="76" y="16.333333333333336" width="102.66666666666669" height="19.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="TextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Sq-Ax-VVD" firstAttribute="centerY" secondItem="dmA-e6-6zs" secondAttribute="centerY" id="6bu-KX-Tbo"/>
+                                                <constraint firstItem="1Sq-Ax-VVD" firstAttribute="leading" secondItem="dmA-e6-6zs" secondAttribute="leading" constant="28" id="MjB-bc-ofR"/>
+                                                <constraint firstItem="Sjd-mQ-G42" firstAttribute="leading" secondItem="1Sq-Ax-VVD" secondAttribute="trailing" constant="14" id="eLc-Bb-hZr"/>
+                                                <constraint firstItem="Sjd-mQ-G42" firstAttribute="centerY" secondItem="dmA-e6-6zs" secondAttribute="centerY" id="uV0-0g-fGy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="radioButton" destination="1Sq-Ax-VVD" id="SWt-oc-gYi"/>
+                                            <outlet property="titleLabel" destination="Sjd-mQ-G42" id="65x-U5-0Pc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите пол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd5-U0-9u2">
+                                <rect key="frame" x="148.66666666666666" y="79" width="96" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-OF-5X1">
+                                <rect key="frame" x="16" y="753.33333333333337" width="361" height="40.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEw-H2-d6w">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="40.666666666666664"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aEw-H2-d6w" secondAttribute="height" multiplier="183:43" id="G15-7u-UyQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Отмена">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped" destination="pTX-QH-9Lo" eventType="touchUpInside" id="RQa-Rx-rRG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZH-0r-UOs">
+                                        <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="40.666666666666664"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bZH-0r-UOs" secondAttribute="height" multiplier="183:43" id="uA4-YB-5am"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Сохранить">
+                                            <color key="titleColor" name="WhiteColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped" destination="pTX-QH-9Lo" eventType="touchUpInside" id="b97-j8-5Es"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HXp-O1-NiO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HXp-O1-NiO" firstAttribute="trailing" secondItem="6cc-OF-5X1" secondAttribute="trailing" constant="16" id="5os-kR-ZqY"/>
+                            <constraint firstItem="kd5-U0-9u2" firstAttribute="top" secondItem="HXp-O1-NiO" secondAttribute="top" constant="20" id="IOd-jA-bki"/>
+                            <constraint firstItem="HXp-O1-NiO" firstAttribute="bottom" secondItem="6cc-OF-5X1" secondAttribute="bottom" constant="24" id="MAT-RE-Ldh"/>
+                            <constraint firstItem="clS-Qq-3dL" firstAttribute="top" secondItem="kd5-U0-9u2" secondAttribute="bottom" constant="24" id="W5v-5J-y99"/>
+                            <constraint firstItem="clS-Qq-3dL" firstAttribute="leading" secondItem="HXp-O1-NiO" secondAttribute="leading" id="ZCE-0x-eNn"/>
+                            <constraint firstItem="6cc-OF-5X1" firstAttribute="leading" secondItem="HXp-O1-NiO" secondAttribute="leading" constant="16" id="aka-Xg-Nmb"/>
+                            <constraint firstItem="HXp-O1-NiO" firstAttribute="trailing" secondItem="clS-Qq-3dL" secondAttribute="trailing" id="nmY-tb-xJb"/>
+                            <constraint firstItem="kd5-U0-9u2" firstAttribute="centerX" secondItem="HXp-O1-NiO" secondAttribute="centerX" id="odI-Ug-gBb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ahv-Ne-xBO"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="aEw-H2-d6w" id="CFu-lB-cyO"/>
+                        <outlet property="saveButton" destination="bZH-0r-UOs" id="4lP-wX-e0f"/>
+                        <outlet property="tableView" destination="clS-Qq-3dL" id="Qz5-yQ-N4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eio-IA-hvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="656"/>
+        </scene>
+        <!--Select Birth Date Controller-->
+        <scene sceneID="gIW-XZ-aIk">
+            <objects>
+                <viewController storyboardIdentifier="SelectBirthDateController" id="VgP-x3-dgX" customClass="SelectBirthDateController" customModule="FamilyVibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F3G-5y-xbA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbc-gL-a2H">
+                                <rect key="frame" x="138" y="101" width="117" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-90-fu8">
+                                <rect key="frame" x="4" y="128.33333333333334" width="389" height="200.00000000000003"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="NDe-QR-bLp"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="ru_RU"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-RF-MCt">
+                                <rect key="frame" x="16" y="764.33333333333337" width="361" height="39.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqM-Zl-vfi">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="39.666666666666664"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lqM-Zl-vfi" secondAttribute="height" multiplier="29:7" id="UU5-QH-SLW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Отмена">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped" destination="VgP-x3-dgX" eventType="touchUpInside" id="Qt2-Iq-AXH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-Ob-XFQ">
+                                        <rect key="frame" x="180" y="0.0" width="181" height="39.666666666666664"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2qw-Ob-XFQ" secondAttribute="height" multiplier="32:7" id="7HH-t3-Q0E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Сохранить">
+                                            <color key="titleColor" name="WhiteColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped" destination="VgP-x3-dgX" eventType="touchUpInside" id="cwV-TA-hsa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tnF-PL-0FH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7TQ-90-fu8" firstAttribute="top" secondItem="Bbc-gL-a2H" secondAttribute="bottom" constant="8" id="BAd-uB-V2K"/>
+                            <constraint firstItem="nvP-RF-MCt" firstAttribute="leading" secondItem="tnF-PL-0FH" secondAttribute="leading" constant="16" id="InM-UT-fVO"/>
+                            <constraint firstItem="tnF-PL-0FH" firstAttribute="bottom" secondItem="nvP-RF-MCt" secondAttribute="bottom" constant="14" id="LdJ-Wp-i3g"/>
+                            <constraint firstItem="7TQ-90-fu8" firstAttribute="leading" secondItem="tnF-PL-0FH" secondAttribute="leading" constant="4" id="Vd6-ya-Uae"/>
+                            <constraint firstItem="7TQ-90-fu8" firstAttribute="trailing" secondItem="tnF-PL-0FH" secondAttribute="trailing" id="cQP-To-dmw"/>
+                            <constraint firstItem="Bbc-gL-a2H" firstAttribute="top" secondItem="tnF-PL-0FH" secondAttribute="top" constant="42" id="ddf-xg-kJ7"/>
+                            <constraint firstItem="Bbc-gL-a2H" firstAttribute="centerX" secondItem="tnF-PL-0FH" secondAttribute="centerX" id="goT-2d-Qq6"/>
+                            <constraint firstItem="tnF-PL-0FH" firstAttribute="trailing" secondItem="nvP-RF-MCt" secondAttribute="trailing" constant="16" id="rHv-4s-a3x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="lqM-Zl-vfi" id="8gG-SL-2Hj"/>
+                        <outlet property="datePicker" destination="7TQ-90-fu8" id="XoU-qr-cNJ"/>
+                        <outlet property="saveButton" destination="2qw-Ob-XFQ" id="Scb-ya-fDB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRn-RG-Cua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2473" y="656"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addButton" width="78" height="78"/>
         <image name="emptyAvatar" width="84" height="84"/>
         <image name="passport" width="114" height="114"/>
+        <image name="radioButton" width="20" height="20"/>
         <image name="snilsDock" width="114" height="114"/>
         <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">

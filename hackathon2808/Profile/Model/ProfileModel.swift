@@ -7,11 +7,44 @@
 
 import Foundation
 import UIKit
+import PromiseKit
+
 final class ProfileModel {
+    
+    //MARK: enterInApp
+    func updateUser(user: UpdatingUser) -> Promise<DApi<TokenWithUser>> {
+        let utlString = NetworkManager.baseURLString + "/api/users/me/"
+        let url = URL(string: utlString)!
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let data = try! encoder.encode(user)
+        return CoreNetwork.request(method: .PUT(url: url, body: data))
+    }
+    
+    
+    //MARK: Change Avatar
+    func changeImage(image: Data) -> Promise<DApi<GettingUser>> {
+        let urlString = NetworkManager.baseURLString + "/api/users/me/photo/"
+        let url = URL(string: urlString)!
+       
+        let media = NetCoreMedia(
+            with: image,
+            forKey: "new_photo",
+            mediaType: .image
+        )
+        let configuration = MultipartRequestConfiguration(url: url, media: [media], parameters: [:])
+        return CoreNetwork.request(method: .MultipartPOST(configuration: configuration))
+    }
     
 }
 
 struct AchivmentsHelper {
     let image: UIImage?
     let title: String?
+}
+
+struct UpdatingUser: Codable {
+    let fullName: String?
+    let birthdate: Int?
+    let gender: Int?
 }

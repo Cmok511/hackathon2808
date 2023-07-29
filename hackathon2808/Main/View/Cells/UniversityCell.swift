@@ -31,10 +31,10 @@ final class UniversityCell: UITableViewCell {
     }
     
     func configure(faculty: GettingFaculty) {
-        
+        priceLabel.text = faculty.name
         avgMarkLabel.text = "Средний проходной балл \(faculty.avgMark ?? 0)"
         titleLabel.text = faculty.university?.name
-        facultyLabel.text = faculty.name
+        facultyLabel.text = faculty.description
         addressLabel.text = faculty.university?.city?.name
         if let urlString =  faculty.university?.photo {
             guard let image = URL(string: urlString) else { return }
