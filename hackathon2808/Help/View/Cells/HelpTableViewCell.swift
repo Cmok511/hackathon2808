@@ -19,4 +19,10 @@ final class HelpTableViewCell: UITableViewCell {
         super.awakeFromNib()
         backView.addRadius16()
     }
+    
+    func configure(help: HelpHelper) {
+        titleImage.image = help.image
+        titleLabel.text = help.title
+        descriptionLabel.text = help.description
+    }
 }

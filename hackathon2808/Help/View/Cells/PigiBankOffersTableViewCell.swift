@@ -26,6 +26,6 @@ final class PigiBankOffersTableViewCell: UITableViewCell {
     }
     
     func configure() {
-        
+
     }
 }

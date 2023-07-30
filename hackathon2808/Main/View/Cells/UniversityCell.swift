@@ -29,7 +29,8 @@ final class UniversityCell: UITableViewCell {
     
     func configure(faculty: GettingFaculty) {
         priceLabel.text = faculty.name
-        avgMarkLabel.text = "Средний проходной балл \(faculty.avgMark ?? 0)"
+        let mark = String(format: "%.1f", faculty.avgMark ?? 0)
+        avgMarkLabel.text = "Средний проходной балл \(mark)"
         titleLabel.text = faculty.university?.name
         facultyLabel.text = faculty.description
         addressLabel.text = faculty.university?.city?.name

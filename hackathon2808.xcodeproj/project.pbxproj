@@ -10,6 +10,11 @@
 		6F33779B2A7631C000893F05 /* ResumeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F33779A2A7631C000893F05 /* ResumeController.swift */; };
 		6F3377A42A76413400893F05 /* PigiBankOffersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377A32A76413400893F05 /* PigiBankOffersController.swift */; };
 		6F3377A62A76423400893F05 /* PigiBankOffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */; };
+		6F3377AB2A764F3400893F05 /* HelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377AA2A764F3400893F05 /* HelpModel.swift */; };
+		6F3377AD2A765E9100893F05 /* FinancialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377AC2A765E9100893F05 /* FinancialCell.swift */; };
+		6F3377AF2A765ED900893F05 /* HelperDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377AE2A765ED900893F05 /* HelperDetailController.swift */; };
+		6F3377B12A7666AF00893F05 /* UnivarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377B02A7666AF00893F05 /* UnivarTableViewCell.swift */; };
+		6F3377B32A766A3D00893F05 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377B22A766A3D00893F05 /* TestTableViewCell.swift */; };
 		6F64CEF92A73E143003CFBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEF82A73E143003CFBB7 /* AppDelegate.swift */; };
 		6F64CEFB2A73E143003CFBB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEFA2A73E143003CFBB7 /* SceneDelegate.swift */; };
 		6F64CEFD2A73E143003CFBB7 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEFC2A73E143003CFBB7 /* InitialViewController.swift */; };
@@ -82,6 +87,11 @@
 		6F33779A2A7631C000893F05 /* ResumeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeController.swift; sourceTree = "<group>"; };
 		6F3377A32A76413400893F05 /* PigiBankOffersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigiBankOffersController.swift; sourceTree = "<group>"; };
 		6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigiBankOffersTableViewCell.swift; sourceTree = "<group>"; };
+		6F3377AA2A764F3400893F05 /* HelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModel.swift; sourceTree = "<group>"; };
+		6F3377AC2A765E9100893F05 /* FinancialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialCell.swift; sourceTree = "<group>"; };
+		6F3377AE2A765ED900893F05 /* HelperDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperDetailController.swift; sourceTree = "<group>"; };
+		6F3377B02A7666AF00893F05 /* UnivarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivarTableViewCell.swift; sourceTree = "<group>"; };
+		6F3377B22A766A3D00893F05 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		6F64CEF52A73E143003CFBB7 /* hackathon2808.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon2808.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F64CEF82A73E143003CFBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F64CEFA2A73E143003CFBB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 			children = (
 				6F64CF832A752DE7003CFBB7 /* HelpViewController.swift */,
 				6F3377A32A76413400893F05 /* PigiBankOffersController.swift */,
+				6F3377AE2A765ED900893F05 /* HelperDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +223,9 @@
 				6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */,
 				6F64CF852A753044003CFBB7 /* HelpTableViewCell.swift */,
 				6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */,
+				6F3377AC2A765E9100893F05 /* FinancialCell.swift */,
+				6F3377B02A7666AF00893F05 /* UnivarTableViewCell.swift */,
+				6F3377B22A766A3D00893F05 /* TestTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -219,8 +233,34 @@
 		6F3377A22A76410200893F05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F3377AA2A764F3400893F05 /* HelpModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6F3377A72A764EEA00893F05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CFA62A75A164003CFBB7 /* AppealsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F3377A82A764EF100893F05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CFA42A759D6B003CFBB7 /* AppealsTableViewCell.swift */,
+				6F64CFA02A759B3B003CFBB7 /* Appeals.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F3377A92A764EFB00893F05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CFA22A759B56003CFBB7 /* AppealsController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6F64CEEC2A73E143003CFBB7 = {
@@ -506,10 +546,9 @@
 		6F64CF9F2A759B2D003CFBB7 /* Appeals */ = {
 			isa = PBXGroup;
 			children = (
-				6F64CFA42A759D6B003CFBB7 /* AppealsTableViewCell.swift */,
-				6F64CFA02A759B3B003CFBB7 /* Appeals.storyboard */,
-				6F64CFA22A759B56003CFBB7 /* AppealsController.swift */,
-				6F64CFA62A75A164003CFBB7 /* AppealsModel.swift */,
+				6F3377A72A764EEA00893F05 /* Model */,
+				6F3377A82A764EF100893F05 /* View */,
+				6F3377A92A764EFB00893F05 /* Controller */,
 			);
 			path = Appeals;
 			sourceTree = "<group>";
@@ -611,6 +650,7 @@
 				6F64CF382A7406F2003CFBB7 /* LoginViewController.swift in Sources */,
 				6F64CFAD2A75B1AD003CFBB7 /* CityTableViewCell.swift in Sources */,
 				6F64CF752A74F118003CFBB7 /* AchivmentsTAbleViewCell.swift in Sources */,
+				6F3377AB2A764F3400893F05 /* HelpModel.swift in Sources */,
 				6F64CF962A757C6D003CFBB7 /* SelectGengerController.swift in Sources */,
 				6F64CF8C2A75448B003CFBB7 /* Int + Extensions.swift in Sources */,
 				6F3377A42A76413400893F05 /* PigiBankOffersController.swift in Sources */,
@@ -638,15 +678,19 @@
 				6F64CFAF2A75B1DF003CFBB7 /* CitySelectViewController.swift in Sources */,
 				6F64CF9A2A757FC0003CFBB7 /* BirthDateController.swift in Sources */,
 				6F64CF932A757BDC003CFBB7 /* Constants.swift in Sources */,
+				6F3377B12A7666AF00893F05 /* UnivarTableViewCell.swift in Sources */,
 				6F64CFA32A759B56003CFBB7 /* AppealsController.swift in Sources */,
 				6F64CF3F2A740CB5003CFBB7 /* OffersController.swift in Sources */,
 				6F64CF732A74F013003CFBB7 /* ProfileModel.swift in Sources */,
+				6F3377AD2A765E9100893F05 /* FinancialCell.swift in Sources */,
 				6F64CF7F2A75286F003CFBB7 /* CreditsTableViewCell.swift in Sources */,
 				6F64CFA72A75A164003CFBB7 /* AppealsModel.swift in Sources */,
+				6F3377B32A766A3D00893F05 /* TestTableViewCell.swift in Sources */,
 				6F64CEF92A73E143003CFBB7 /* AppDelegate.swift in Sources */,
 				6F64CF882A7534B9003CFBB7 /* NotificationsController.swift in Sources */,
 				6F64CF512A7419BB003CFBB7 /* UniversityCell.swift in Sources */,
 				6F64CEFB2A73E143003CFBB7 /* SceneDelegate.swift in Sources */,
+				6F3377AF2A765ED900893F05 /* HelperDetailController.swift in Sources */,
 				6F64CF462A740E32003CFBB7 /* TabBarController.swift in Sources */,
 				6F3377A62A76423400893F05 /* PigiBankOffersTableViewCell.swift in Sources */,
 				6F64CF642A7452BB003CFBB7 /* SelectTargetController.swift in Sources */,
