@@ -21,6 +21,9 @@ final class NotificationsTableViewCell: UITableViewCell {
         backView.addRadius()
     }
     func configure() {
+        daleLabel.text = "30.08.2023"
+        titleLabel.text = "Уведомление от банка"
+        textNotifificationsLabel.text = "Добрый день! Успешно!"
         
     }
     

@@ -21,4 +21,9 @@ final class TargetProfileTableCell: UITableViewCell {
         backView.addRadius()
         
     }
+    
+    func configure(feld: GettingField?) {
+        titleLabel.text = feld?.name
+    }
+    
 }

@@ -47,4 +47,5 @@ struct GettingUser: Codable {
     let patronymic: String?
     let birthdate: Int?
     let gender: Int?
+    let fields: [GettingField]?
 }

@@ -32,7 +32,6 @@ final class ProfileViewController: BaseViewController {
             changeAvatar()
         }
     }
-    //
     
     private var user: GettingUser?
     
@@ -42,6 +41,9 @@ final class ProfileViewController: BaseViewController {
         genderTxetField.delegate = self
         birthDateTextField.delegate = self
         getMyProfile()
+        DispatchQueue.main.async {
+            self.avatarPicker.delegate = self
+        }
     }
     
 

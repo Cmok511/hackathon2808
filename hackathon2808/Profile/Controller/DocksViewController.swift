@@ -33,6 +33,13 @@ final class DocksViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        DispatchQueue.main.async {
+            self.passport1Picker.delegate = self
+            self.passport2Picker.delegate = self
+            self.snilsPicker.delegate = self
+            self.innPicker.delegate = self
+        }
     }
     
     //Actions

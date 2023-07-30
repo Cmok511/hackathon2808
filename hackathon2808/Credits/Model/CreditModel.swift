@@ -17,6 +17,22 @@ final class CreditModel {
         let url = URL(string: urlString)!
         return CoreNetwork.request(method: .GET(url: url))
     }
+    
+    
+    func accaptOffer(offerId: Int) -> Promise<DApi<[GettingBid]>> {
+        let urlString = NetworkManager.baseURLString + "/api/offers/\(offerId)/bids/"
+        
+        let url = URL(string: urlString)!
+        let param : [String: Codable] = [
+            "desired_amount": 1000000,
+        ]
+        
+        let wrappedDict = param.mapValues(NetCoreStruct.EncodableWrapper.init(wrapped:))
+        let data: Data? = try? JSONEncoder().encode(wrappedDict)
+        return CoreNetwork.request(method: .POST(url: url, body: data))
+    }
+    
+    
 }
 
 struct GettingOffer:Codable {

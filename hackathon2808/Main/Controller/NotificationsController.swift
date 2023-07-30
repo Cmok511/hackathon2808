@@ -23,11 +23,12 @@ final class NotificationsController: BaseViewController {
 //MARK: - UITableViewDataSource
 extension NotificationsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: NotificationsTableViewCell.reuseID, for: indexPath) as! NotificationsTableViewCell
+        cell.configure()
         return cell
     }
     

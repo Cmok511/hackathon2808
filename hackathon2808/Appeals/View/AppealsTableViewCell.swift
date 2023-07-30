@@ -30,16 +30,16 @@ final class AppealsTableViewCell: UITableViewCell {
         numberOfAppealLabel.text = "Заявка номер \(bid?.id ?? 0)"
         switch bid?.isAccepted {
         case true :
-            numberOfAppealLabel.text = "Заявка одобрена"
-            numberOfAppealLabel.textColor = UIColor(named: "OnlineColor")
+            statusOfAppealLabel.text = "Заявка одобрена"
+            statusOfAppealLabel.textColor = UIColor(named: "OnlineColor")
         case false :
-            numberOfAppealLabel.text = "Заявка отклонена"
-            numberOfAppealLabel.textColor = UIColor(named: "LightTextColor")
+            statusOfAppealLabel.text = "Заявка отклонена"
+            statusOfAppealLabel.textColor = UIColor(named: "LightTextColor")
         case .none:
-            numberOfAppealLabel.text = "Ожидание ответа"
-            numberOfAppealLabel.textColor = UIColor(named: "TextColor")
+            statusOfAppealLabel.text = "Ожидание ответа"
+            statusOfAppealLabel.textColor = UIColor(named: "TextColor")
         case .some(_):
-            numberOfAppealLabel.text = "Ожидание ответа"
+            statusOfAppealLabel.text = "Ожидание ответа"
         }
         
         if let imageOfBank = bid?.offer?.bank?.icon {

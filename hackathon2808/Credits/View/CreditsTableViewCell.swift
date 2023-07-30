@@ -18,7 +18,7 @@ final class CreditsTableViewCell: UITableViewCell {
     @IBOutlet private weak var summLabel: UILabel!
     @IBOutlet private weak var payLabel: UILabel!
     @IBOutlet private weak var termLabel: UILabel!
-    @IBOutlet private weak var sendAppealButton: UIButton!
+    @IBOutlet  weak var sendAppealButton: UIButton!
     @IBOutlet private weak var backView: UIView!
     
     
