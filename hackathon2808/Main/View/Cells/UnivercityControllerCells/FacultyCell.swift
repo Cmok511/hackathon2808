@@ -13,7 +13,7 @@ final class FacultyCell: UITableViewCell {
     
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet weak var aboutButton: UIButton!
-    @IBOutlet private weak var addTargetButton: UIButton!
+    @IBOutlet weak var addTargetButton: UIButton!
     @IBOutlet private weak var avgMarkLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var backView: UIView!
@@ -30,5 +30,16 @@ final class FacultyCell: UITableViewCell {
         descriptionLabel.text = field?.name
         priceLabel.text = field?.price?.price
         avgMarkLabel.text = "Средний проходной балл \(field?.minMark ?? 0)"
+        if field?.isSelected ?? false {
+            addTargetButton.backgroundColor = UIColor(named: "BackgroundColor")
+            addTargetButton.tintColor = UIColor(named: "TextColor")
+            addTargetButton.setTitle("Направление добавлено", for: .normal)
+            addTargetButton.addGreyBorder()
+        } else {
+            addTargetButton.removeBorder()
+            addTargetButton.setTitle("Добавить направление", for: .normal)
+            addTargetButton.backgroundColor = UIColor(named: "AccentColor")
+            addTargetButton.tintColor = UIColor(named: "WhiteColor")
+        }
     }
 }

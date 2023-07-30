@@ -728,7 +728,7 @@
         <!--Select City Controller-->
         <scene sceneID="uhQ-GC-XiS">
             <objects>
-                <viewController storyboardIdentifier="SelectCityController" id="wYq-MW-HX0" customClass="SelectCityController" customModule="FamilyVibe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCityController" id="wYq-MW-HX0" customClass="SelectCityController" customModule="hackathon2808" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Dd-Fc-7Qv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -737,7 +737,7 @@
                                 <rect key="frame" x="0.0" y="79" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="86" id="cbS-6w-xXA" customClass="CityTableViewCell" customModule="FamilyVibe" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="86" id="cbS-6w-xXA" customClass="CityTableViewCell" customModule="hackathon2808" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbS-6w-xXA" id="RJl-8h-ebI">
@@ -783,6 +783,87 @@
             </objects>
             <point key="canvasLocation" x="978" y="-1385"/>
         </scene>
+        <!--Resume Controller-->
+        <scene sceneID="4Fs-2t-bQi">
+            <objects>
+                <viewController storyboardIdentifier="ResumeController" id="edI-uZ-KR0" customClass="ResumeController" customModule="hackathon2808" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3LE-bA-viH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-99-iH9">
+                                <rect key="frame" x="16" y="751" width="361" height="43"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSg-D1-iPX">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="43"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="KDo-QV-vme"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" name="TextColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Отмена"/>
+                                        <connections>
+                                            <action selector="cancelTapped" destination="edI-uZ-KR0" eventType="touchUpInside" id="LDn-9Z-d03"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-YL-UO2">
+                                        <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="43"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="jhw-9G-qWG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" name="WhiteColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Отправить"/>
+                                        <connections>
+                                            <action selector="sendButton" destination="edI-uZ-KR0" eventType="touchUpInside" id="Hnl-Gz-s0U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-Py-fpy">
+                                <rect key="frame" x="16" y="112.66666666666669" width="350" height="154"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="Luy-7K-lLD"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Резюме" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-tO-tyI">
+                                <rect key="frame" x="27" y="74" width="67" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i4L-yr-mMs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cnF-99-iH9" firstAttribute="leading" secondItem="i4L-yr-mMs" secondAttribute="leading" constant="16" id="LIf-gP-Sjb"/>
+                            <constraint firstItem="Rio-Py-fpy" firstAttribute="leading" secondItem="i4L-yr-mMs" secondAttribute="leading" constant="16" id="LXP-Bi-AGA"/>
+                            <constraint firstItem="i4L-yr-mMs" firstAttribute="trailing" secondItem="Rio-Py-fpy" secondAttribute="trailing" constant="27" id="LjK-XH-0L4"/>
+                            <constraint firstItem="i4L-yr-mMs" firstAttribute="trailing" secondItem="cnF-99-iH9" secondAttribute="trailing" constant="16" id="bN7-Zi-SNZ"/>
+                            <constraint firstItem="i4L-yr-mMs" firstAttribute="bottom" secondItem="cnF-99-iH9" secondAttribute="bottom" constant="24" id="bNx-dJ-jY6"/>
+                            <constraint firstItem="UUx-tO-tyI" firstAttribute="leading" secondItem="i4L-yr-mMs" secondAttribute="leading" constant="27" id="kkM-si-cp8"/>
+                            <constraint firstItem="UUx-tO-tyI" firstAttribute="top" secondItem="i4L-yr-mMs" secondAttribute="top" constant="15" id="sKg-43-80v"/>
+                            <constraint firstItem="Rio-Py-fpy" firstAttribute="top" secondItem="UUx-tO-tyI" secondAttribute="bottom" constant="17" id="zVw-Jm-f3O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="KSg-D1-iPX" id="5Ic-fi-KX6"/>
+                        <outlet property="send" destination="g2L-YL-UO2" id="oEG-M0-p8F"/>
+                        <outlet property="textView" destination="Rio-Py-fpy" id="EoC-B0-flr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9u-he-R2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3513.740458015267" y="231.69014084507043"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NotificationsBell" width="16" height="20"/>
@@ -804,6 +885,9 @@
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

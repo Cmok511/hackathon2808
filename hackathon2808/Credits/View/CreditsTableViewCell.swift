@@ -30,6 +30,16 @@ final class CreditsTableViewCell: UITableViewCell {
     
     
     func configure(offer: GettingOffer?) {
+        titleOfCreditLAbel.text = offer?.title
+        priceLabel.text = offer?.maxPrice?.price
+        summLabel.text = offer?.minPrice?.price
+        payLabel.text = offer?.annualPayment?.price
+        termLabel.text = "до \(offer?.paymentTerm ?? 1) лет"
         
+        if let icon = offer?.bank?.icon {
+            guard let url = URL(string: icon) else { return }
+            bankImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            bankImage.sd_setImage(with: url)
+        }
     }
 }

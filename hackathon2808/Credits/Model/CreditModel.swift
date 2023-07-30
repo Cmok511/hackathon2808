@@ -12,7 +12,7 @@ import PromiseKit
 final class CreditModel {
     
     //MARK:  getAllUniversity
-    func getAllFaculty() -> Promise<DApi<[GettingOffer]>>  {
+    func getAllOffers() -> Promise<DApi<[GettingOffer]>>  {
         let urlString = NetworkManager.baseURLString + "/api/offers/"
         let url = URL(string: urlString)!
         return CoreNetwork.request(method: .GET(url: url))
@@ -33,6 +33,6 @@ struct GettingOffer:Codable {
 struct GettingBank: Codable {
     let name: String?
     let url: String?
-    let id: String?
+    let id: Int?
     let icon: String?
 }

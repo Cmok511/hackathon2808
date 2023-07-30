@@ -18,7 +18,6 @@ final class UniversityCell: UITableViewCell {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var facultyLabel: UILabel!
     @IBOutlet weak var avgMarkLabel: UILabel!
-    
     @IBOutlet private weak var backView: UIView!
     
     

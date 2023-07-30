@@ -21,18 +21,37 @@ final class MainModel {
     }
     
     //MARK:  getAllUniversity
-    func getAllFaculty() -> Promise<DApi<[GettingFaculty]>>  {
+    func getAllFaculty(with city: Int? = nil, costFrom: Int? = nil, costTo: Int? = nil) -> Promise<DApi<[GettingFaculty]>>  {
         let urlString = NetworkManager.baseURLString + "/api/faculties/"
-        let url = URL(string: urlString)!
-        return CoreNetwork.request(method: .GET(url: url))
+        var components = URLComponents(string: urlString)
+        var queryItems: [URLQueryItem] = []
+        if let city {
+            queryItems.append(URLQueryItem(name: "city_id", value: "\(city)"))
+        }
+        if let costFrom {
+            queryItems.append(URLQueryItem(name: "cost_from", value: "\(costFrom)"))
+        }
+        
+        if let costTo {
+            queryItems.append(URLQueryItem(name: "cost_to", value: "\(costTo)"))
+        }
+        components?.queryItems = queryItems
+        let url = components?.url!
+        return CoreNetwork.request(method: .GET(url: url!))
     }
-    
     
     //MARK: getFacultyWith
     func getFacultyWith(facultyId: Int) ->Promise<DApi<GettingFaculty>> {
         let urlString = NetworkManager.baseURLString + "/api/faculties/\(facultyId)/"
         let url = URL(string: urlString)!
         return CoreNetwork.request(method: .GET(url: url))
+    }
+    
+    //MARK: addTarget
+    func addTarget(id: Int) -> Promise<DApi<GettingField>> {
+        let urlString = NetworkManager.baseURLString + "/api/fields/\(id)/"
+        let url = URL(string: urlString)!
+        return CoreNetwork.request(method: .POST(url: url, body: nil))
     }
 
 }
@@ -77,6 +96,7 @@ struct GettingField: Codable {
     let minMark: Int?
     let price: Int?
     let id: Int?
+    let isSelected: Bool?
 }
 
 
@@ -84,3 +104,4 @@ struct City: Codable {
     let name: String
     let id: Int
 }
+

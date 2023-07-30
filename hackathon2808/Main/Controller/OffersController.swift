@@ -37,10 +37,10 @@ final class OffersController: BaseViewController {
         tableView.delegate = self
     }
     
-    private func getAllFaculty() {
+    private func getAllFaculty(city: City? = nil, sumFrom: Int? = nil, sumTo: Int? = nil) {
         startSpinnerBlure()
         firstly {
-            model.getAllFaculty()
+            model.getAllFaculty(with: city?.id, costFrom: sumFrom, costTo: sumTo)
         }.done { data in
             if data.message?.lowercased() == "ok" {
                 self.stopSpinnerBlure()
@@ -55,8 +55,7 @@ final class OffersController: BaseViewController {
             self.view.makeToast("Что-то пошло не так")
         }
     }
-    
-    
+        
     
     private func setNavigationController() {
         // navbarView avatarView
@@ -103,6 +102,7 @@ final class OffersController: BaseViewController {
         guard let viewController = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "FilterController") as? FilterController else {
             return
         }
+        viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -129,4 +129,12 @@ extension OffersController: UITableViewDelegate {
         viewController.facultyId = facultyArray[indexPath.row].id
         navigationController?.pushViewController(viewController, animated: true)
     }
+}
+//MARK: - FilterControllerDelegate
+
+extension OffersController: FilterControllerDelegate {
+    func newData(selectedCity: City?, sumFrom: Int?, sumTo: Int?) {
+        getAllFaculty(city: selectedCity, sumFrom: sumFrom, sumTo: sumTo)
+    }
+    
 }

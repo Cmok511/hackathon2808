@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F33779B2A7631C000893F05 /* ResumeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F33779A2A7631C000893F05 /* ResumeController.swift */; };
+		6F3377A42A76413400893F05 /* PigiBankOffersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377A32A76413400893F05 /* PigiBankOffersController.swift */; };
+		6F3377A62A76423400893F05 /* PigiBankOffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */; };
 		6F64CEF92A73E143003CFBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEF82A73E143003CFBB7 /* AppDelegate.swift */; };
 		6F64CEFB2A73E143003CFBB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEFA2A73E143003CFBB7 /* SceneDelegate.swift */; };
 		6F64CEFD2A73E143003CFBB7 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F64CEFC2A73E143003CFBB7 /* InitialViewController.swift */; };
@@ -76,6 +79,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F33779A2A7631C000893F05 /* ResumeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeController.swift; sourceTree = "<group>"; };
+		6F3377A32A76413400893F05 /* PigiBankOffersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigiBankOffersController.swift; sourceTree = "<group>"; };
+		6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigiBankOffersTableViewCell.swift; sourceTree = "<group>"; };
 		6F64CEF52A73E143003CFBB7 /* hackathon2808.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon2808.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F64CEF82A73E143003CFBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F64CEFA2A73E143003CFBB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +163,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F33779C2A763D9200893F05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF9D2A759891003CFBB7 /* CreditModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F33779D2A763D9800893F05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF7E2A75286F003CFBB7 /* CreditsTableViewCell.swift */,
+				6F64CF7A2A75242D003CFBB7 /* Credits.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F33779E2A763D9C00893F05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF7C2A75243C003CFBB7 /* CreditsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F33779F2A7640E000893F05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CF832A752DE7003CFBB7 /* HelpViewController.swift */,
+				6F3377A32A76413400893F05 /* PigiBankOffersController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F3377A02A7640EB00893F05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F3377A12A7640F600893F05 /* Cells */,
+				6F64CF812A752DDB003CFBB7 /* Help.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F3377A12A7640F600893F05 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */,
+				6F64CF852A753044003CFBB7 /* HelpTableViewCell.swift */,
+				6F3377A52A76423400893F05 /* PigiBankOffersTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6F3377A22A76410200893F05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6F64CEEC2A73E143003CFBB7 = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +379,7 @@
 				6F64CF872A7534B9003CFBB7 /* NotificationsController.swift */,
 				6F64CFAA2A75ADDD003CFBB7 /* FilterController.swift */,
 				6F64CFAE2A75B1DF003CFBB7 /* CitySelectViewController.swift */,
+				6F33779A2A7631C000893F05 /* ResumeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,10 +469,9 @@
 		6F64CF792A7523F0003CFBB7 /* Credits */ = {
 			isa = PBXGroup;
 			children = (
-				6F64CF7A2A75242D003CFBB7 /* Credits.storyboard */,
-				6F64CF7C2A75243C003CFBB7 /* CreditsController.swift */,
-				6F64CF7E2A75286F003CFBB7 /* CreditsTableViewCell.swift */,
-				6F64CF9D2A759891003CFBB7 /* CreditModel.swift */,
+				6F33779D2A763D9800893F05 /* View */,
+				6F33779C2A763D9200893F05 /* Model */,
+				6F33779E2A763D9C00893F05 /* Controller */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -413,10 +479,9 @@
 		6F64CF802A752DCC003CFBB7 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				6F64CF812A752DDB003CFBB7 /* Help.storyboard */,
-				6F64CF832A752DE7003CFBB7 /* HelpViewController.swift */,
-				6F64CF852A753044003CFBB7 /* HelpTableViewCell.swift */,
-				6F64CFA82A75A63B003CFBB7 /* PigiBankCell.swift */,
+				6F3377A22A76410200893F05 /* Model */,
+				6F3377A02A7640EB00893F05 /* View */,
+				6F33779F2A7640E000893F05 /* Controller */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -548,6 +613,7 @@
 				6F64CF752A74F118003CFBB7 /* AchivmentsTAbleViewCell.swift in Sources */,
 				6F64CF962A757C6D003CFBB7 /* SelectGengerController.swift in Sources */,
 				6F64CF8C2A75448B003CFBB7 /* Int + Extensions.swift in Sources */,
+				6F3377A42A76413400893F05 /* PigiBankOffersController.swift in Sources */,
 				6F64CF342A740220003CFBB7 /* InitModel.swift in Sources */,
 				6F64CF562A742C86003CFBB7 /* DescriptionCell.swift in Sources */,
 				6F64CF902A756531003CFBB7 /* GosuslugiController.swift in Sources */,
@@ -560,6 +626,7 @@
 				6F64CF622A744758003CFBB7 /* UIView + Extensions.swift in Sources */,
 				6F64CF8E2A755BBC003CFBB7 /* WelcomeViewController.swift in Sources */,
 				6F64CFA52A759D6B003CFBB7 /* AppealsTableViewCell.swift in Sources */,
+				6F33779B2A7631C000893F05 /* ResumeController.swift in Sources */,
 				6F64CF662A745315003CFBB7 /* TargetProfileTableCell.swift in Sources */,
 				6F64CFA92A75A63B003CFBB7 /* PigiBankCell.swift in Sources */,
 				6F64CF862A753044003CFBB7 /* HelpTableViewCell.swift in Sources */,
@@ -581,6 +648,7 @@
 				6F64CF512A7419BB003CFBB7 /* UniversityCell.swift in Sources */,
 				6F64CEFB2A73E143003CFBB7 /* SceneDelegate.swift in Sources */,
 				6F64CF462A740E32003CFBB7 /* TabBarController.swift in Sources */,
+				6F3377A62A76423400893F05 /* PigiBankOffersTableViewCell.swift in Sources */,
 				6F64CF642A7452BB003CFBB7 /* SelectTargetController.swift in Sources */,
 				6F64CF7D2A75243C003CFBB7 /* CreditsController.swift in Sources */,
 				6F64CF5A2A743E46003CFBB7 /* AboutFacultyViewController.swift in Sources */,

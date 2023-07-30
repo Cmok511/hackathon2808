@@ -26,10 +26,15 @@ final class CreditsController: BaseViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        GetOffers()
+    }
+    
     private func GetOffers() {
         startSpinnerBlure()
         firstly {
-            model.getAllFaculty()
+            model.getAllOffers()
         }.done { data in
             self.stopSpinnerBlure()
             if data.message?.lowercased() == "ok" {
@@ -43,7 +48,6 @@ final class CreditsController: BaseViewController {
             self.view.makeToast("Что-то пошло не так")
         }
     }
-    
     
     
     private func setupUI() {

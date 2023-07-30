@@ -68,6 +68,48 @@ final class UnivercityController: BaseViewController {
     }
     
     
+    //MARK: getFaculty
+    private func getFacultySpiner() {
+        guard let facultyId else {
+            self.view.makeToast("нет id")
+            return}
+        spinner.startAniamtion()
+        firstly {
+            model.getFacultyWith(facultyId: facultyId)
+        }.done { data in
+            if data.message?.lowercased() == "ok" {
+                self.faculty = data.data
+                self.title = self.faculty?.name
+                self.spinner.stopAnimation()
+            } else {
+                self.spinner.stopAnimation()
+                self.view.makeToast(data.description)
+            }
+        }.catch { error in
+            self.spinner.stopAnimation()
+            self.view.makeToast("Что-то пошло не так")
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
+    
+    //MARK: addTarget
+    private func addTarget(rargetId: Int?) {
+        guard let rargetId else { return }
+        firstly {
+            model.addTarget(id: rargetId)
+        }.done { data in
+            if data.message?.lowercased() == "ok" {
+                self.view.makeToast("Направление добавлено в портфель")
+                self.getFacultySpiner()
+            } else {
+                self.view.makeToast(data.description)
+            }
+        }.catch { error in
+            self.view.makeToast("Что-то пошло не так")
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -80,6 +122,11 @@ final class UnivercityController: BaseViewController {
         }
         viewController.field = faculty?.fields?[index]
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    //MARK: addTargetTapped
+    @objc private func addTargetTapped(_ sender: UIButton) {
+        addTarget(rargetId: sender.tag)
     }
     
 }
@@ -114,6 +161,8 @@ extension UnivercityController: UITableViewDataSource {
         case .faculty:
             let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reuseID, for: indexPath) as! FacultyCell
             cell.configure(field: faculty?.fields?[indexPath.row])
+            cell.addTargetButton.tag = faculty?.fields?[indexPath.row].id ?? 0
+            cell.addTargetButton.addTarget(self, action: #selector(addTargetTapped), for: .touchUpInside)
             return cell
         }
     }

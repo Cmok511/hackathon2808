@@ -36,10 +36,40 @@ final class AboutFacultyViewController: BaseViewController {
         avgMarkLabel.text = "Средний проходной балл \(field?.minMark ?? 0)"
         priceLabel.text = field?.price?.price
         descriptionLAbel.text = field?.description
+        
+        if field?.isSelected ?? false {
+            addTargetButton.backgroundColor = UIColor(named: "BackgroundColor")
+            addTargetButton.tintColor = UIColor(named: "TextColor")
+            addTargetButton.setTitle("Направление добавлено", for: .normal)
+            addTargetButton.addGreyBorder()
+        } else {
+            addTargetButton.removeBorder()
+            addTargetButton.setTitle("Добавить направление", for: .normal)
+            addTargetButton.backgroundColor = UIColor(named: "AccentColor")
+            addTargetButton.tintColor = UIColor(named: "WhiteColor")
+        }
     }
     
     @IBAction func sendAppeal(_ sender: UIButton) {
-        self.view.makeToast("Заявление отправлено")
+        //present SelectGenderController
+        guard let controller = UIStoryboard(name: "Offers", bundle: nil).instantiateViewController(withIdentifier: "ResumeController") as? ResumeController else { return }
+        if let sheet = controller.sheetPresentationController {
+            if #available(iOS 16.0, *) {
+                sheet.detents = [
+                    .custom { _ in
+                        return 320 }]
+            } else {
+                sheet.detents = [.medium()]
+            }
+            sheet.prefersGrabberVisible = true
+        }
+        controller.delegate = self
+        present(controller, animated: true)
     }
     
+}
+extension AboutFacultyViewController: ResumeControllerDelegate {
+    func sendResume(text: String?) {
+        self.view.makeToast("Заявление отправлено")
+    }
 }

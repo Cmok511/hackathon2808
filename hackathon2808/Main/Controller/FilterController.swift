@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol FilterControllerDelegate: AnyObject {
-    func newData()
+    func newData(selectedCity: City?, sumFrom: Int?, sumTo: Int?)
 }
 
 final class FilterController: BaseViewController {
@@ -56,7 +56,6 @@ final class FilterController: BaseViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction private func confurmButton() {
-        
         if sumFromTextField.text != "" {
             guard let sumFromSting = sumFromTextField.text else { return }
             sumFrom = Int(sumFromSting)
@@ -67,7 +66,7 @@ final class FilterController: BaseViewController {
             sumTo = Int(sumToSting)
         }
         
-        
+        delegate?.newData(selectedCity: selectedCity, sumFrom: sumFrom, sumTo: sumTo)
         
         navigationController?.popViewController(animated: true)
     }
